@@ -12,7 +12,7 @@ my_dict['list'].append('six')
 del my_dict['list'][1]
 
 # dict: добавьте элемент с ключом ('i am a tuple',) и любым значением; удалите какой-нибудь элемент
-my_dict['dict']['i am a tuple'] = 'me'
+my_dict['dict'][('i am a tuple',)] = 'any value'
 del my_dict['dict']['a']
 
 # set: добавьте новый элемент в множество; удалите элемент из множества
