@@ -1,5 +1,4 @@
 numbers = range(1, 101)
-new_number = []
 for number in numbers:
     if number % 3 == 0 and number % 5 == 0:
         print('FuzzBuzz')
