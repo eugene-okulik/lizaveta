@@ -3,6 +3,7 @@ def process_text(text):
     number = int(pieces[1])
     print(number + 10)
 
+
 texts = [
     'результат операции: 42',
     'результат операции: 54',
