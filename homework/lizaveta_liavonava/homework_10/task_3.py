@@ -11,6 +11,7 @@ def decorator(func):
         return func(first, second, operation)
     return wrapper
 
+
 @decorator
 def calc(first, second, operation):
     if operation == '+':
@@ -21,6 +22,7 @@ def calc(first, second, operation):
         return first * second
     elif operation == '/':
         return first / second
+
 
 first = int(input('Enter the first number: '))
 second = int(input('Enter the second number: '))
