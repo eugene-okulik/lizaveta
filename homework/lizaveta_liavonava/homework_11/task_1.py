@@ -9,6 +9,7 @@ class Book:
         self.ISBN = ISBN
         self.reserved = False
 
+
 book_1 = Book('The Idiot', 'Fyodor Dostoevsky', 656, '978-0-14-044792-8')
 book_2 = Book('1984', 'George Orwell', 328, '978-0-452-28423-4')
 book_3 = Book('The Great Gatsby', 'F. Scott Fitzgerald', 180, '978-0-7432-7356-5')
@@ -20,10 +21,11 @@ books = [book_1, book_2, book_3, book_4, book_5]
 for book in books:
     if book.reserved:
         print(f'Название: {book.title}, Автор: {book.author}, страниц: {book.page_number}, '
-          f'материал: {book.page_material}, зарезервирована')
+              f'материал: {book.page_material}, зарезервирована')
     else:
         print(f'Название: {book.title}, Автор: {book.author}, страниц: {book.page_number}, '
               f'материал: {book.page_material}')
+
 
 class Textbook(Book):
     def __init__(self, title, author, page_number, ISBN, subject, grade, tasks):
@@ -31,6 +33,7 @@ class Textbook(Book):
         self.subject = subject
         self.grade = grade
         self.tasks = tasks
+
 
 textbook_1 = Textbook('Algebra Essentials', 'John Smith', 200, '978-1-11-111111-1',
                       'Mathematics', '9', True)
