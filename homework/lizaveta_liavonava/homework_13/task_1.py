@@ -1,6 +1,9 @@
+import os
 from datetime import datetime, timedelta
 
-file_path = '/Users/lliavonova/aqa_python/lizaveta/homework/eugene_okulik/hw_13/data.txt'
+base_path = '/Users/lliavonova/aqa_python/lizaveta/homework/eugene_okulik/hw_13'
+file_path = os.path.join(base_path, 'data.txt')
+#file_path = '/Users/lliavonova/aqa_python/lizaveta/homework/eugene_okulik/hw_13/data.txt'
 
 with open(file_path) as file:
     for number, line in enumerate(file, start=1):
