@@ -1,8 +1,8 @@
 import os
 from datetime import datetime, timedelta
 
-base_path = '/Users/lliavonova/aqa_python/lizaveta/homework/eugene_okulik/hw_13'
-file_path = os.path.join(base_path, 'data.txt')
+base_path = os.path.dirname(__file__)
+file_path = os.path.join(base_path, '..', '..', 'eugene_okulik', 'hw_13', 'data.txt')
 
 with open(file_path) as file:
     for number, line in enumerate(file, start=1):
