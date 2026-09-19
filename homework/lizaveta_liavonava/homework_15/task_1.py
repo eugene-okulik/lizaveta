@@ -24,9 +24,9 @@ print('student_id:', student_id)
 cursor.executemany(
     "insert into books (title, taken_by_student_id) values (%s, %s)",
     [
-                    ('The Secret History', student_id),
-                    ('The Goldfinch', student_id),
-                    ('The Little Friend', student_id),
+        ('The Secret History', student_id),
+        ('The Goldfinch', student_id),
+        ('The Little Friend', student_id),
     ]
 )
 
@@ -83,9 +83,9 @@ print('Lesson IDs:', lesson_1, lesson_2, lesson_3, lesson_4)
 query = "INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)"
 
 cursor.execute(query, (10, lesson_1, student_id))
-cursor.execute(query, (5,  lesson_2, student_id))
-cursor.execute(query, (79,  lesson_3, student_id))
-cursor.execute(query, (5,  lesson_4, student_id))
+cursor.execute(query, (5, lesson_2, student_id))
+cursor.execute(query, (79, lesson_3, student_id))
+cursor.execute(query, (5, lesson_4, student_id))
 
 cursor.execute("SELECT value FROM marks WHERE student_id = %s",
                (student_id,))
