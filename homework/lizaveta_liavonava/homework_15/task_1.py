@@ -8,9 +8,6 @@ db = mysql.connect(
     database='st-onl'
 )
 cursor = db.cursor(dictionary=True)
-cursor.execute('select * from students')
-data = cursor.fetchall()
-# print(data)
 
 
 cursor.execute(
@@ -80,12 +77,16 @@ lesson_4 = cursor.lastrowid
 
 print('Lesson IDs:', lesson_1, lesson_2, lesson_3, lesson_4)
 
-query = "INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)"
 
-cursor.execute(query, (10, lesson_1, student_id))
-cursor.execute(query, (5, lesson_2, student_id))
-cursor.execute(query, (79, lesson_3, student_id))
-cursor.execute(query, (5, lesson_4, student_id))
+cursor.executemany(
+    "INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)",
+    [
+        (10, lesson_1, student_id),
+        (5, lesson_2, student_id),
+        (7, lesson_3, student_id),
+        (5, lesson_4, student_id)
+    ]
+)
 
 cursor.execute("SELECT value FROM marks WHERE student_id = %s",
                (student_id,))
