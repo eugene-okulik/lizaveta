@@ -15,7 +15,6 @@ db = mysql.connect(
     database=os.getenv('DB_NAME'),
 )
 
-
 cursor = db.cursor(dictionary=True)
 cursor.execute('SHOW TABLES')
 data = cursor.fetchall()
@@ -60,7 +59,6 @@ for row in db_data:
 cursor.close()
 db.close()
 
-
 file_path_1 = os.path.join(base_path, '..', '..', 'eugene_okulik', 'Lesson_16', 'hw_data', 'data.csv')
 with (open(file_path_1, newline='', encoding='utf-8') as csv_file):
     file_data = csv.DictReader(csv_file)
@@ -77,7 +75,7 @@ with (open(file_path_1, newline='', encoding='utf-8') as csv_file):
                     and row_csv['subject_title'] == row_db['subject_title']
                     and row_csv['lesson_title'] == row_db['lesson_title']
                     and row_csv['mark_value'] == str(row_db['mark'])
-                    ):
+            ):
                 break
         else:
             print('Data not found:', row_csv)
