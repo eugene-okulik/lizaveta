@@ -74,8 +74,7 @@ with (open(file_path_1, newline='', encoding='utf-8') as csv_file):
                     and row_csv['book_title'] == row_db['book_title']
                     and row_csv['subject_title'] == row_db['subject_title']
                     and row_csv['lesson_title'] == row_db['lesson_title']
-                    and row_csv['mark_value'] == str(row_db['mark'])
-            ):
+                    and row_csv['mark_value'] == str(row_db['mark'])):
                 break
         else:
             print('Data not found:', row_csv)
